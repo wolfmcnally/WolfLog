@@ -9,6 +9,8 @@ A Swift framework for debug logging.
 
 ## Requirements
 
+Swift 4.2
+
 ## Installation
 
 WolfLog is available through [CocoaPods](https://cocoapods.org). To install
