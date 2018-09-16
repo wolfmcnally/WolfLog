@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
     s.name             = 'WolfLog'
     s.version          = '1.0.0'
-    s.summary          = 'A Swift framwork for debug logging.'
+    s.summary          = 'A Swift framework for debug logging.'
 
     # s.description      = <<-DESC
     # TODO: Add long description of the pod here.

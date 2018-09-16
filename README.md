@@ -5,9 +5,7 @@
 [![License](https://img.shields.io/cocoapods/l/WolfLog.svg?style=flat)](https://cocoapods.org/pods/WolfLog)
 [![Platform](https://img.shields.io/cocoapods/p/WolfLog.svg?style=flat)](https://cocoapods.org/pods/WolfLog)
 
-## Example
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+A Swift framework for debug logging.
 
 ## Requirements
 
