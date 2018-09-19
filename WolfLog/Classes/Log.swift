@@ -3,7 +3,6 @@
 //  WolfLog
 //
 //  Created by Wolf McNally on 12/10/15.
-//  Copyright © 2015 WolfMcNally.com.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
