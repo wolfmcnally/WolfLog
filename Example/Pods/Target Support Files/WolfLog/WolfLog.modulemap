@@ -1,6 +1,0 @@
-framework module WolfLog {
-  umbrella header "WolfLog-umbrella.h"
-
-  export *
-  module * { export * }
-}
