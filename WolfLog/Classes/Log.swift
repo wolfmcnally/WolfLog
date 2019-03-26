@@ -131,49 +131,49 @@ public class Log {
     }
 
     public func trace<T>(_ message: @autoclosure () -> T, obj: Any? = nil, group: LogGroup? = nil, _ file: StaticString = #file, _ line: UInt = #line, _ function: String = #function) {
-        self.print(message, level: .trace, obj: obj, group: group, file, line, function)
+        self.print(message(), level: .trace, obj: obj, group: group, file, line, function)
     }
 
     public func info<T>(_ message: @autoclosure () -> T, obj: Any? = nil, group: LogGroup? = nil, _ file: StaticString = #file, _ line: UInt = #line, _ function: String = #function) {
-        self.print(message, level: .info, obj: obj, group: group, file, line, function)
+        self.print(message(), level: .info, obj: obj, group: group, file, line, function)
     }
 
     public func warning<T>(_ message: @autoclosure () -> T, obj: Any? = nil, group: LogGroup? = nil, _ file: StaticString = #file, _ line: UInt = #line, _ function: String = #function) {
-        self.print(message, level: .warning, obj: obj, group: group, file, line, function)
+        self.print(message(), level: .warning, obj: obj, group: group, file, line, function)
     }
 
     public func error<T>(_ message: @autoclosure () -> T, obj: Any? = nil, group: LogGroup? = nil, _ file: StaticString = #file, _ line: UInt = #line, _ function: String = #function) {
-        self.print(message, level: .error, obj: obj, group: group, file, line, function)
+        self.print(message(), level: .error, obj: obj, group: group, file, line, function)
     }
 }
 
 public func logTrace<T>(_ message: @autoclosure () -> T, obj: Any? = nil, group: LogGroup? = nil, _ file: StaticString = #file, _ line: UInt = #line, _ function: String = #function) {
     #if !NO_LOG
-        logger?.trace(message, obj: obj, group: group, file, line, function)
+        logger?.trace(message(), obj: obj, group: group, file, line, function)
     #endif
 }
 
 public func logInfo<T>(_ message: @autoclosure () -> T, obj: Any? = nil, group: LogGroup? = nil, _ file: StaticString = #file, _ line: UInt = #line, _ function: String = #function) {
     #if !NO_LOG
-        logger?.info(message, obj: obj, group: group, file, line, function)
+        logger?.info(message(), obj: obj, group: group, file, line, function)
     #endif
 }
 
 public func logWarning<T>(_ message: @autoclosure () -> T, obj: Any? = nil, group: LogGroup? = nil, _ file: StaticString = #file, _ line: UInt = #line, _ function: String = #function) {
     #if !NO_LOG
-        logger?.warning(message, obj: obj, group: group, file, line, function)
+        logger?.warning(message(), obj: obj, group: group, file, line, function)
     #endif
 }
 
 public func logError<T>(_ message: @autoclosure () -> T, obj: Any? = nil, group: LogGroup? = nil, _ file: StaticString = #file, _ line: UInt = #line, _ function: String = #function) {
     #if !NO_LOG
-        logger?.error(message, obj: obj, group: group, file, line, function)
+        logger?.error(message(), obj: obj, group: group, file, line, function)
     #endif
 }
 
 public func logFatalError<T>(_ message: @autoclosure () -> T, obj: Any? = nil, group: LogGroup? = nil, _ file: StaticString = #file, _ line: UInt = #line, _ function: String = #function) -> Never {
     #if !NO_LOG
-        logger?.error(message, obj: obj, group: group, file, line, function)
+        logger?.error(message(), obj: obj, group: group, file, line, function)
     #endif
     fatalError(String(describing: message()), file: file, line: line)
 }
