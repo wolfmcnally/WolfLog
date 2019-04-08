@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name             = 'WolfLog'
-    s.version          = '2.0.0'
+    s.version          = '2.0.1'
     s.summary          = 'A Swift framework for debug logging.'
 
     # s.description      = <<-DESC
@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
     s.author           = { 'Wolf McNally' => 'wolf@wolfmcnally.com' }
     s.source           = { :git => 'https://github.com/wolfmcnally/WolfLog.git', :tag => s.version.to_s }
 
-    s.source_files = 'WolfLog/Classes/**/*'
+    s.source_files = 'Sources/WolfLog/**/*'
 
     s.swift_version = '5.0'
 
@@ -22,7 +22,5 @@ Pod::Spec.new do |s|
 
     s.module_name = 'WolfLog'
 
-    s.dependency 'ExtensibleEnumeratedName'
-    s.dependency 'WolfStrings'
-    s.dependency 'WolfNumerics'
+    s.dependency 'WolfCore'
 end

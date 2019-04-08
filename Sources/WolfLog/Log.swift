@@ -23,8 +23,7 @@
 //  SOFTWARE.
 
 import os
-import ExtensibleEnumeratedName
-import WolfStrings
+import WolfCore
 
 public enum LogLevel: Int, Comparable {
     case trace
