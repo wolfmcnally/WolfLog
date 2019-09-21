@@ -22,7 +22,6 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import os
 import WolfCore
 
 public enum LogLevel: Int, Comparable {
@@ -71,30 +70,27 @@ public class Log {
 
         // Do print if there's no group associated with the message.
         if let group = group {
-            // Do print if the level of the associated group is at or above the global level.
-            guard let groupLevel = groupLevels[group], groupLevel >= self.level else { return }
+            // Don't print unless there's a level defined for the group.
+            guard let groupLevel = groupLevels[group] else { return }
+            // Don't print unless the level of the associated group is at or above the global level.
+            guard groupLevel >= self.level else { return }
+            // Don't print unless the level of the message is at or above the level of the associated group.
+            guard level >= groupLevel else { return }
         }
 
         let a = Joiner()
         a.append(level.symbol)
 
-        var secondSymbol = false
-
         if let group = group {
             let b = Joiner(left: "[", separator: ", ", right: "]")
             b.append(group.rawValue)
             a.append(b)
-            secondSymbol = true
         }
 
         if let obj = obj {
             a.append(obj)
-            secondSymbol = true
         }
 
-        if secondSymbol {
-            a.append(String.tab, level.symbol)
-        }
         a.append(message())
 
         Swift.print(a)
